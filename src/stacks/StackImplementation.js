@@ -38,3 +38,8 @@ console.log("Stack size", stack.size());
 stack.clear();
 console.log("Stack size", stack.size());
 console.log("Stack is empty", stack.isEmpty());
+
+/* TODO
+* https://learnersbucket.com/examples/algorithms/the-base-converter-algorithm/
+*
+*/
