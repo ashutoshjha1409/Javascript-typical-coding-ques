@@ -32,6 +32,8 @@ var res = searchInsertPositionBF(array1, 10);
 
 /*
     Optimal approach: Binary Search
+    Time Complexity: O(log N)
+    Auxiliary Space: O(1)
 */
 const searchInsertPosition = (arr, k) => {
     let start = 0;
