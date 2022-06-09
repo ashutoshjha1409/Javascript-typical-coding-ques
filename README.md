@@ -1,4 +1,4 @@
-# GeeksForGeeks
+# Typical Javascript Coding Questions
 # Stacks | Easy
 1. Stack implementation
 2. Balanced parentheses
