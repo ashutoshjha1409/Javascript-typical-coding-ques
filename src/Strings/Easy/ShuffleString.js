@@ -19,8 +19,12 @@ const shuffleStringBf = (str, indices) => {
 }
 
 const res = shuffleStringBf('MEDIUM', [2,4,5,0,1,3])
-//console.log(res); // IUMMED
+console.log('BruteForce ', res); // IUMMED
 
+/*
+    Time: O(n)
+    Space: O(n)
+*/
 const shuffleString = (str, indices) => {
     let shuffledString = '';
     for (let i = 0; i < indices.length; i++) {
