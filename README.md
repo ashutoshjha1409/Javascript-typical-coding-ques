@@ -24,3 +24,4 @@
 5. Jewels & Stones
 6. DefangIP4 
 7. Position of robot after given movements.
+8. FizzBuzzBazz
