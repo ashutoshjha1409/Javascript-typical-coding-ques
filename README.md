@@ -28,3 +28,7 @@
 
 # Recursion 
 1. Find path
+2. Recursive Currying
+
+# Polyfills
+1. Bind
