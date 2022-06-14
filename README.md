@@ -28,6 +28,7 @@
 9. Find non repeating character
 10. Valid Anagram
 11. Valid Palindrome
+12. Implement indexOf
 
 # Recursion 
 1. Find path
