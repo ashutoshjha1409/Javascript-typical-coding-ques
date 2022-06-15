@@ -37,3 +37,5 @@
 # Polyfills
 1. Bind
 2. Promise All
+3. Promise AllSettled
+4. Promise race

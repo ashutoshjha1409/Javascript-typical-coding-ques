@@ -12,15 +12,15 @@ const promiseAll = (promiseArr) => {
     let results = [];
     let counter = 0;
     return new Promise((resolve, reject) => {
-        promiseArr.forEach((promise, index) => {
+        promiseArr.map((promise, index) => 
             Promise.resolve(promise)
                 .then(value => {
                     results[index] = value;
                     counter++;
                     if(counter === promiseArr.length)
                         resolve(results);
-                }).catch(err => reject(err));
-        })
+                }).catch(err => reject(err))
+        )
     });
 }
 
