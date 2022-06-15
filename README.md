@@ -36,3 +36,4 @@
 
 # Polyfills
 1. Bind
+2. Promise All
