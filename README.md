@@ -40,3 +40,5 @@
 2. Promise All
 3. Promise AllSettled
 4. Promise race
+5. Debounce
+6. Throttling
