@@ -15,6 +15,7 @@
 8. Search Insert Position
 9. Single Number
 10. Two Sum
+11. Flatten array
 
 # Strings | Easy
 1. Maximum Balanced String Partitions
