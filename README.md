@@ -42,3 +42,6 @@
 4. Promise race
 5. Debounce
 6. Throttling
+
+# Random
+1. Generators examples
