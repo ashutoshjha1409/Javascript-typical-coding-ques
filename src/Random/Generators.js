@@ -38,6 +38,14 @@ let gen3 = genFunc3(10);
 // console.log(gen3.next(10));
 // console.log(gen3.next(5));
 
+// i 10
+// { value: 100, done: false }
+// j 50
+// { value: 25, done: false } 
+// 5
+// { value: 65, done: true }  
+// foo
+
 const genFunc4 = function* () {
     yield;
     foo(yield "I am useless");
@@ -67,6 +75,11 @@ const gen5 = fetchUser();
 // console.log(gen5.next())
 // console.log(gen5.next())
 
+// { value: { name: 'Ashutosh', age: 100 }, done: false }
+// undefined
+// { value: undefined, done: true }
+// foo
+
 /*
     yield* expression, which inherently means that we are going to complete another generator function specified in the yield* expression before continuing the current generator function.
 */
@@ -88,6 +101,13 @@ const itr = g2();
 // console.log(itr.next())
 // console.log(itr.next())
 
+// { value: 1, done: false }
+// { value: 2, done: false }
+// { value: 3, done: false }
+// { value: 4, done: false }
+// { value: 5, done: false }
+// foo
+
 function *getFuncChild () {
     yield 1;
     yield 2;
@@ -105,11 +125,24 @@ const itr2 = getFuncMain();
 // console.log(itr2.next())
 // console.log(itr2.next())
 // console.log(itr2.next())
+// console.log(itr2.next())
+
+// { value: 1, done: false }
+// { value: 2, done: false }
+// foo
+// { value: 'the end', done: false }
+// { value: undefined, done: true }
+// foo
 
 const itr3 = getFuncMain();
 /* 
     Similar to our next() method which is called explicitly, for…of loop internally moves on to the next iteration based on the yield keyword. 
 */
 for (let i of itr3) {
-    console.log(i)
+ //   console.log(i)
 }
+
+// 1
+// 2      
+// foo    
+// the end

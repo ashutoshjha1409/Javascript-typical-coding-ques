@@ -31,6 +31,9 @@
 11. Valid Palindrome
 12. Implement indexOf
 
+# Linked List
+1. Singly Linked  List
+
 # Recursion 
 1. Find path
 2. Recursive Currying
