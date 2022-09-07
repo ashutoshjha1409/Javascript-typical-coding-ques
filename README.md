@@ -34,6 +34,7 @@
 # Linked List
 1. Singly Linked  List
 2. Doubly Linked List
+3. Merge Two Sorted Lists
 
 # Recursion 
 1. Find path
