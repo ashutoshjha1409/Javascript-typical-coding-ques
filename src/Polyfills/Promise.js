@@ -1,5 +1,3 @@
-const { resolve } = require("node:path/win32");
-
 /* 
     Promise polyfill basic implementation
     Step 1: implement a constructor function
@@ -30,7 +28,7 @@ function MyPromise(executor) {
     isRejected = true;
     error = err;
     if (typeof onReject === "function" && !isCalled) {
-      onReject(val);
+      onReject(err);
       isCalled = true;
     }
   }
@@ -67,27 +65,44 @@ MyPromise.reject = (val) => {
 };
 
 MyPromise.all = function (promises) {
-  let cnt = 0,
-    res = [];
+  return new MyPromise(function executor(resolve, reject) {
+    let cnt = 0,
+      res = [];
 
-  if (promises.length === 0) {
-    resolve(promises);
-    return;
-  }
-
-  for (let i = 0; i < promises.length; i++) {
-    promises[i]
-      .then((val) => {
-        done(val, i);
-      })
-      .catch((err) => console.log(err));
-  }
-
-  function done(value, i) {
-    res[i] = value;
-    ++cnt;
-    if (promises.length === cnt) {
-      resolve(res);
+    if (promises.length === 0) {
+      resolve(promises);
+      return;
     }
-  }
+
+    for (let i = 0; i < promises.length; i++) {
+      promises[i]
+        .then((val) => {
+          done(val, i);
+        })
+        .catch((err) => console.log(err));
+    }
+
+    function done(value, i) {
+      res[i] = value;
+      ++cnt;
+      if (promises.length === cnt) {
+        resolve(res);
+      }
+    }
+  });
 };
+
+const exPolyfill = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 1000);
+});
+const exPolyfill2 = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(5);
+  }, 1000);
+});
+
+exPolyfill.then((val) => console.log(val)).catch((err) => console.log(err));
+let results = MyPromise.all([exPolyfill, exPolyfill2]); // returns promise
+results.then((val) => console.log(val)).catch((err) => console.log(err));

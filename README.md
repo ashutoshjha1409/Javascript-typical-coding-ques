@@ -42,11 +42,12 @@
 
 # Polyfills
 1. Bind
-2. Promise All
-3. Promise AllSettled
-4. Promise race
-5. Debounce
-6. Throttling
+2. Promise
+3. Promise All
+4. Promise AllSettled
+5. Promise race
+6. Debounce
+7. Throttling
 
 # Random
 1. Generators examples
