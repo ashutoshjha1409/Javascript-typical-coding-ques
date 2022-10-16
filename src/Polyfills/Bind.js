@@ -58,5 +58,26 @@ Function.prototype.myBind = function (...args) {
     }
 }
 
+Function.prototype.myCall = function (currentContext = {}, ...arg) {
+  if (typeof this !== "function") {
+    throw new Error(this + "it's not callable");
+  }
+  currentContext.fn = this;
+  currentContext.fn(...arg);
+};
+
+Function.prototype.myApply = function (currentContext = {}, arg = []) {
+  if (typeof this !== "function") {
+    throw new Error(this + "it's not callable");
+  }
+  if (!Array.isArray(arg)) {
+    throw new TypeError("CreateListFromArrayLike called on non-object");
+  }
+  currentContext.fn = this;
+  currentContext.fn(...arg);
+};
+
+
+
 let getMyName2 = getDetails.myBind(myData, 'Bangalore');
 getMyName2('India');

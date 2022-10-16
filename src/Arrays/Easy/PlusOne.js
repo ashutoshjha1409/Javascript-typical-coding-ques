@@ -16,23 +16,22 @@ const plusOneBF = (arr) => {
         }
     }
 }
-const array = [1,9, 9];
+const array = [9, 9, 9, 9];
 // let res = plusOneBF(array);
 //console.log(res);
 
 const plusOne = (arr) => {
-    for (let i = arr.length - 1; i >=0; i--) {
-        if(arr[i] < 9) {
-            arr[i] = arr[i] + 1;
-            return arr;
-        }
-        arr[i] = 0;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] < 9) {
+      arr[i] = arr[i] + 1;
+      return arr;
     }
-    
-    let res = arr.unshift(1);
-    return arr;
+    arr[i] = 0;
+  }
 
-}
+  let res = arr.unshift(1);
+  return arr;
+};
 
 let res1 = plusOne(array);
 console.log(res1);

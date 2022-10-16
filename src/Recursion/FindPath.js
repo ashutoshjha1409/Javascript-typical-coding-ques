@@ -19,7 +19,7 @@ var obj = {
 const findPath = (object, path) => {
    const pathArr = typeof path === 'string' ? path.split('.') : path; 
     let removedElement = pathArr.shift();      
-    
+    console.log(pathArr, path, object);
     if (pathArr.length !== 0) {       
         return findPath(object[removedElement], pathArr);
     }    
@@ -30,11 +30,11 @@ const findPath = (object, path) => {
 
 
 console.log(findPath(obj, 'a.b.c')); // 12
-console.log(findPath(obj, 'a.b')); // {c: 12, j: false}
-console.log(findPath(obj, 'a.b.d')); // undefined
-console.log(findPath(obj, 'a.c')); // undefined
-console.log(findPath(obj, 'a.b.c.d')); // undefined
-console.log(findPath(obj, 'a.b.c.d.e')); // undefined
-console.log(findPath(obj, 'a.b.j')); //false
-console.log(findPath(obj, 'a.b.j.k')); //undefined
-console.log(findPath(obj, 'a.k')); //null
+// console.log(findPath(obj, 'a.b')); // {c: 12, j: false}
+// console.log(findPath(obj, 'a.b.d')); // undefined
+// console.log(findPath(obj, 'a.c')); // undefined
+// console.log(findPath(obj, 'a.b.c.d')); // undefined
+// console.log(findPath(obj, 'a.b.c.d.e')); // undefined
+// console.log(findPath(obj, 'a.b.j')); //false
+// console.log(findPath(obj, 'a.b.j.k')); //undefined
+// console.log(findPath(obj, 'a.k')); //null

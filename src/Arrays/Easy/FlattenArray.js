@@ -22,7 +22,7 @@ const flattenBF = (array) => {
 let arr1 = [1, , [3, [4, 5, 6], 7], 8];
 let arr2 = [1,2,3,4,5,[6,[7,8,9]]];
 let arr3 = [1,2,3,4,5,[6,[7,8,9, [10, [11, [12, 13]]]]]]
-console.log(flattenBF(arr3))
+//console.log(flattenBF(arr3))
 
 function flattenArray(arr) {  
     let result = [];    
@@ -42,5 +42,5 @@ function flattenArray(arr) {
   } 
 
   const testArray = [1, 2, , [4, undefined, [11, 10]], 6, [7, null, 0], null, 9]; 
-// const result = flattenArray(testArray); 
-// console.log(result);
+const result = flattenArray(testArray); 
+console.log(result);
