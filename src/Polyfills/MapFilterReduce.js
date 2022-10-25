@@ -8,6 +8,8 @@ Array.prototype.myArray = function (cb) {
   let temp = [];
   // this -> array referencing to, e.g array1.myArray then array1 is 'this' here
   for (let i = 0; i < this.length; i++) {
+    // Ignore index if value is not defined for index (e.g. in sparse arrays).
+    // if (Object.hasOwn(this, k))
     temp.push(cb(this[i], i, this));
   }
   return temp;

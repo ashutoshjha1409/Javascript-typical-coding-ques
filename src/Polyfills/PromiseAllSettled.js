@@ -1,5 +1,6 @@
 /*
-    Promise.allSettled() — This method returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise.
+    Promise.allSettled() — This method returns a promise that resolves after all of the given promises have either resolved or rejected, 
+    with an array of objects that each describes the outcome of each promise.
 
     We don't want to terminate bcoz all promises must be either fullfilled or rejected
 */
