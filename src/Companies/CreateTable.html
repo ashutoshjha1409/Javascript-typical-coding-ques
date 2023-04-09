@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table with cell values</title>
+    </head>
+    <body>
+        <form id="form">
+            <label for="row">Enter rows</label>
+            <input type="text" id="row" value="">
+
+            <label for="column">Enter columns</label>
+            <input type="text" id="column" value="">
+
+            <button type="submit" id="submitBtn" onclick="createTable()">Submit</button>
+
+            <table id="zigZag"></table>
+        </form>
+        <script>
+            /*
+                1 8 9  16 17 even: row * colIndex + 1, odd: row * (colIndex + 1)
+                2 7 10 15 18 
+                3 6 11 14 19 even: matrix[rowindex - 1][colIndex] + 1, odd:  matrix[rowindex - 1][colIndex] - 1
+                4 5 12 13 20
+            */
+            document.querySelector('#submitBtn').addEventListener('click', function(event){
+                event.preventDefault();
+            });
+            
+            function createTable(){
+                let noOfRows = document.getElementById("row").value;
+                let noOfColumns = document.getElementById("column").value;
+                var table = document.getElementById("zigZag");
+                let matrix = [];
+                for(let i = 0; i < noOfRows; i++) {
+                    let rows = [];
+                    var row = table.insertRow(i);
+                    for(let j = 0; j < noOfColumns; j++){                        
+                        var cell = row.insertCell(j);
+
+                        if(j == 0){
+                            rows.push(i + 1);
+                            cell.innerHTML = i + 1;
+                        } else if(i == 0){
+                            if (j % 2 == 0){
+                                rows.push(noOfRows * j + 1);
+                                cell.innerHTML = noOfRows * j + 1;
+                            } else {
+                                rows.push(noOfRows * (j + 1));
+                                cell.innerHTML = noOfRows * (j + 1);
+                            }
+                        } else {
+                            if (j % 2 == 0){
+                                rows.push(matrix[i - 1][j] + 1);
+                                cell.innerHTML = matrix[i - 1][j] + 1;
+                            } else {
+                                rows.push(matrix[i - 1][j] - 1);
+                                cell.innerHTML =matrix[i - 1][j] - 1;
+                            }
+                        }
+                    }
+                    matrix.push(rows)
+                }
+                console.log(matrix)
+            }
+        </script>
+    </body>
+</html>

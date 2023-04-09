@@ -89,3 +89,27 @@ export default function curry(func) {
       };
   };  
 }
+
+function add(a,b,c) {
+  return a+b+c;
+}  
+  
+function multi(a,b,c,d) {
+  return a*b*c*d;
+}
+
+const processFun = (func) => {
+  return function curried(...args){
+    return function(...args2){
+      if (args2) {
+        if(args.length >= func.length) {  
+          return func.apply(this, args);
+        }
+      }
+      return curried.apply(this, [...args, ...args2])       
+    };
+};  
+}
+console.log(processFun(add)(1)(2)(3)());
+console.log(processFun(add)(1)(2,3)())
+console.log(processFun(multi)(1)(2)(4)(5)());
