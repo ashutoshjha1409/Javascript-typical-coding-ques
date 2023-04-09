@@ -58,6 +58,7 @@ const gen4 = genFunc4();
 // console.log(gen4.next());
 // console.log(gen4.next());
 // console.log(gen4.next(5));
+// console.log(gen4.next());
 // { value: undefined, done: false }
 // { value: 'I am useless', done: false }
 // Just printing argus passed 5
